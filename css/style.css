@@ -1,0 +1,307 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+ }
+ 
+ body {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 25px ;
+}
+
+ img {
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 55px;
+ }
+  
+ .grey {
+  color: grey;
+ }
+ 
+ .grey_2 {
+  margin-top: 2px;
+  font-size: 12px;
+  color: rgb(151, 156, 167);
+ }
+ 
+ input {
+  border-radius: 5px;
+  border: none;
+  height: 80%;
+  padding-left: 50px;
+  border: 1px solid #eaf0f6;
+  width: calc(100% - 20px);
+ }
+
+ .underline {
+  font-size: 15px;
+  text-decoration: underline; 
+ }
+ 
+ .sent {
+  background-color: #d5f9ba;
+  }
+  
+  .received {
+  background-color: white;
+  }
+  
+
+ .attivo {
+  background-color: #e9ebeb;
+ }
+ 
+ .sfondo {
+  display: flex;
+  flex-direction: column;
+ }
+ 
+ .sfondo_1 {
+  z-index: -1;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  background-color: #009688;
+ }
+ 
+ .sfondo_2 {
+  z-index: -1;
+  position: absolute;
+  top: 141px;
+  height: 85vh;
+  width: 100%;
+  background-color: #d8dbd6;
+ }
+ 
+ .wrap {
+  width: 100%;
+  height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 20px;
+ }
+ 
+ #root {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+ }
+ 
+ #div_sx {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+ }
+ 
+ #right {
+  display: flex;
+  flex-direction: column;
+  width: 65%; 
+ }
+ 
+
+ .nome_utente {
+  display: flex; 
+  height: 7%;
+  border-right: 1px solid lightgrey;
+  background-color: #eaeaea;
+ }
+ 
+ .img_nome {
+  display: flex;
+  align-items: center;
+  width: 50%; 
+ }
+ 
+ .notice {
+  display: flex;
+  align-items: center;
+  background-color: #8edafc;
+  width: 100%;
+  height: 10%;
+  padding-left: 20px;
+ }
+ 
+ .notice_message {
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+ }
+
+ .icone {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  justify-content: flex-end;
+  width: 50%;
+ }
+
+ .icone i {
+  font-size: 20px;
+  padding: 10px;
+  color: #b1b1b1;
+ }
+
+ .fa-bell-slash {
+  border-radius:50%;
+  color: #8edafc;
+  background-color: #fff;
+  padding: 15px 12px;
+  font-size: 20px;
+ }
+ 
+ .input_sx {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 5%;
+  background-color: #fafafa;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ .icona_sx {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+  color:#71767e;
+ }
+ 
+ .contact {
+  overflow-y:scroll;
+  height: 78%;
+  background-color: #fff;
+ }
+
+ .contatto {
+  display: flex;
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid lightgray;
+ 
+ }
+ 
+ .info_contact {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  width: 50%;
+ }
+ 
+ .info_contact .grigio,
+ .info.grigio2,
+ .info-messaggio.grigio2 {
+  margin-top: 4px;
+  font-size: 12px;
+ }
+ 
+ .info {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%; 
+ }
+
+ .message {
+  overflow-y:scroll;
+  display: flex;
+  height: calc(100% - 20%);
+ }
+ 
+ .top {
+  display: flex; 
+  height: 7%;
+  border-right: 1px solid lightgrey;
+  background-color: #eaeaea;
+ }
+ 
+ .top .grigio {
+  margin-top: 2px;
+  font-size: 13px;
+ }
+ 
+ .column {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height: 100%;
+  background-image: url(../img/mine.jpg);
+ }
+ 
+ .flex-end {
+  justify-content: flex-end;
+ }
+ 
+ .flex-start {
+  align-items: flex-start;
+ }
+ 
+ .enter {
+  display: flex;
+  height: 7%;
+  background-color: #f3eeea;
+  text-align: center;
+  align-items: center;
+ }
+ 
+ .emoticons {
+  width: 8%;
+  font-size: 30px;
+  color: #71767e;
+ }
+ 
+ .microphone {
+  font-size: 22px;
+  width: 10%;
+  color: #71767e;
+ }
+
+ .input_enter { 
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+ }
+
+ .input_enter input {
+  width: 100%;
+  height: 80%; 
+  padding-left: 10px;
+ }
+ 
+ .row {
+  display: flex;
+  font-size: 16px; 
+  margin: 8px;
+ }
+
+ .blue {
+  background-color: blue;
+ }
+ 
+ .messaggio {
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+ }
+ 
+ .info-message {
+  text-align: right;
+  font-size: 12px;
+ }
+
+ .destra {
+  margin-left: 600px;
+ }
+ 
+ .padding-top {
+  padding-top: 250px;
+ }
+
+ .testo {
+  margin: 2px; 
+ }

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>vue-boolzapp</title>
+</head>
+<body>
+
+<!-- background  -->
+<div class="sfondo_1">
+  <div class="sfondo_2">
+
+  </div>
+</div>
+<!-- /background  -->
+
+<!-- container -->
+<div class="wrap">
+
+  <!-- root -->
+  <div id="root">
+    <!-- div sx -->
+    <div id="div_sx">
+      <!-- nome utente -->
+      <div class="nome_utente">
+        <div class="img_nome">
+          <img src="img/avatar_io.jpg" alt="avatar utente">
+          <span>
+            Nome Utente
+          </span>
+        </div>
+        <!-- icone sx -->
+        <div class="icone">
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <!-- /icone sx -->
+      </div>
+      <!-- /nome utente -->
+
+      <!-- notifiche -->
+      <div class="notice">
+        <i class="fas fa-bell-slash"></i>
+        <div class="notice_message">
+          <div>
+            Ricevi notifiche di nuovi messaggi
+          </div>
+          <span class="underline grey">
+            Attiva notifiche desktop
+          </span>
+        </div>
+      </div>
+      <!-- /notifiche -->
+      <div class="input_sx">
+        <input type="text" placeholder="Cerca o inizia una nuova chat">
+        <i class="fas fa-search icona_sx"></i>
+      </div>
+
+      <!-- contact -->
+      <div class="contact">
+        
+        <div class="contatto " v-for="contatto,contatore in contacts" @click="indice = contatore"
+          :class=" indice == contatore ? 'attivo' : ''" >
+          
+          <!-- immagineAvatar -->
+          <img :src="immagineAvatar(contatore)" alt="{{contacts[contatore].name}}">
+          <!-- /immagineAvatar -->
+
+          <!-- info contact -->
+          <div class="info_contact">
+
+            {{contacts[contatore].name}}
+            <span class="grey_2">
+              {{ contacts[contatore].messages[contacts[contatore].messages.length - 1].text.substr(0,30) + "..." }}
+            </span>
+          </div>
+
+          <div class="info grey_2">
+            {{ contacts[contatore].messages[contacts[contatore].messages.length - 1].date }}
+          </div>
+          <!-- /info contact -->
+        </div>
+      </div>
+      <!-- /contact -->
+
+    </div>
+    <!-- /div sx -->
+
+    <!-- div dx -->
+    <div id="right">
+      <!-- top dialogo -->
+      <div class="top">
+        <!-- info contatto -->
+        <div class="img_nome">
+          <img :src="immagineAvatar(indice)" alt="avatar utente">
+          <div class="notifiche_messaggi">
+            <div>
+              {{contacts[indice].name}}
+            </div>
+            <span class="grey">
+              Ultimo accesso {{contacts[indice].messages[contacts[indice].messages.length-1].date}}
+            </span>
+
+          </div>
+        </div>
+        <!-- /info contatto -->
+
+        <!-- icone -->
+        <div class="icone">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-paperclip"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        <!-- /icone -->
+
+      </div>
+      <!-- /top dialogo -->
+
+      <div class="message">
+        <!-- colonna -->
+        <div class="column">
+          <!-- message -->
+          <div class="row" v-for="messaggio,contatore in contacts[indice].messages"
+            :class="contacts[indice].messages[contatore].status == 'sent' ? 'flex-end ' : ''">
+
+            <div class="messaggio" :class="contacts[indice].messages[contatore].status == 'sent' ? 'sent' : 'received'">
+              <div class="testo">
+                {{messaggio.text}}
+              </div>
+              <div class="info-message grey">
+                {{messaggio.date}}
+              </div>
+            </div>
+
+          </div>
+          <!-- /message -->
+
+        </div>
+        <!-- /colonna -->
+
+      </div>
+
+      <div class="enter">
+        <div class="emoticons">
+          <i class="far fa-smile"></i>
+        </div>
+        <div class="input_enter">
+          <input type="text" placeholder="Scrivi un messaggio">
+        </div>
+        <div class="microphone">
+          <i class="fas fa-microphone"></i>
+        </div>
+      </div>
+    </div>
+    <!-- /div dx -->
+  </div>
+  <!-- /root -->
+</div>
+<!-- /container -->
+<script src="js/script.js"></script>
+</body>
+
+</html>
