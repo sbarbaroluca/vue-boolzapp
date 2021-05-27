@@ -32,7 +32,7 @@
     <!-- div sx -->
     <div id="div_sx">
       <!-- nome utente -->
-      <div class="nome_utente">
+      <div class="nome_utente" >
         <div class="img_nome">
           <img src="img/avatar_io.jpg" alt="avatar utente">
           <span>
@@ -74,7 +74,7 @@
           :class=" indice == contatore ? 'attivo' : ''" >
           
           <!-- immagineAvatar -->
-          <img :src="immagineAvatar(contatore)" alt="{{contacts[contatore].name}}">
+          <img :src="immagineAvatar(contatore)" :alt="contacts[contatore].name">
           <!-- /immagineAvatar -->
 
           <!-- info contact -->
@@ -156,7 +156,8 @@
           <i class="far fa-smile"></i>
         </div>
         <div class="input_enter">
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input type="text" placeholder="Scrivi un messaggio" v-model= "nuovoMessaggio">
+          <h1>{{nuovoMessaggio}}</h1>
         </div>
         <div class="microphone">
           <i class="fas fa-microphone"></i>
